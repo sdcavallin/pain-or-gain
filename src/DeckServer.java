@@ -6,15 +6,9 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Date;
-import java.util.List;
 import java.util.Scanner;
  
-/**
- * This program demonstrates a simple TCP/IP socket server.
- *
- * @author www.codejava.net
- */
+
 public class DeckServer {
  
     public static void main(String[] args) {
@@ -35,11 +29,24 @@ public class DeckServer {
         
         Scanner scan = new Scanner(System.in);
         
-        System.out.println("Players: ");
+        int players = 3;
         
-//        int players = Integer.parseInt(args[0]);
-//        int players = 3;
-        int players = Integer.parseInt(scan.nextLine());
+        if(args.length > 0) {
+        	players = Integer.parseInt(args[0]);
+        }
+        
+        else {
+        	
+        }
+        System.out.print("Players: ");
+        
+        String str = scan.nextLine();
+        
+        if(str.trim().length() > 0) {
+        	players = Integer.parseInt(str);
+        }
+        
+        System.out.println();
         
         ArrayList<ArrayList<String>> draw = new ArrayList<ArrayList<String>>(players);
         
@@ -75,6 +82,8 @@ public class DeckServer {
                 writer.println(draw.get(player).toString().substring(1, draw.get(player).toString().length()-1));
                 player++;
             }
+            
+            System.out.println("\nCards dealt successfully");
  
         } catch (IOException ex) {
             System.out.println("Server exception: " + ex.getMessage());

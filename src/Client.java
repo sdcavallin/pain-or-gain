@@ -5,12 +5,7 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.Scanner;
- 
-/**
- * This program demonstrates a simple TCP/IP socket client.
- *
- * @author www.codejava.net
- */
+
 public class Client {
  
     public static void main(String[] args) {
@@ -24,7 +19,7 @@ public class Client {
         
         Scanner scan = new Scanner(System.in);
         
-        System.out.print("Press Enter or Type Host:");
+        System.out.print("Press Enter or Type Host: ");
         
         String str = scan.nextLine();
         
@@ -51,11 +46,11 @@ public class Client {
  
         } catch (UnknownHostException ex) {
  
-        	System.out.println("\nThere is no game going on! [ Server not found: " + ex.getMessage() + "]");
+        	System.out.println("\nThere is no game going on! [Server not found: " + ex.getMessage() + "]");
  
         } catch (IOException ex) {
  
-            System.out.println("\nThere is no game going on! [ I/O error: " + ex.getMessage() + "]");
+            System.out.println("\nThere is no game going on! [I/O error: " + ex.getMessage() + "]");
         }
         
         scan.close();
