@@ -4,6 +4,9 @@ Simple client-server program for my card game Pain or Gain that allows a group o
 
 To use, compile and run the DeckServer on your host machine. You should hardcode your public IP address into it or your players will have to enter it manually every time.
 
-Don't forget to port-forward port 6789 to your host computer.
+Don't forget to `port-forward port 6789` to your host computer.
 
 Players run the Client and press enter to draw a card.
+
+Run the Client or DeckServer from the command line by compiling it with `javac Client.java` and running it with `java Client`
+Alternatively, export it as a jar after compiling with `jar cfe Client.jar Client Client.class` and then run it with `java -jar Client.jar`
