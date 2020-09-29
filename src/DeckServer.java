@@ -11,10 +11,9 @@ import java.util.Scanner;
 
 public class DeckServer {
  
+	// TODO note to self: only works with Ethernet Adapter 3
+	
     public static void main(String[] args) {
-//        if (args.length < 1) return;
- 
-//        int port = Integer.parseInt(args[0]);
         int port = 6789;
         
         String[] arr = {"Inmate", "Inmate", "Inmate", "Inmate", "Inmate", 
@@ -88,6 +87,8 @@ public class DeckServer {
         } catch (IOException ex) {
             System.out.println("Server exception: " + ex.getMessage());
             ex.printStackTrace();
+            
+            scan.nextLine();
         }
         
         scan.close();

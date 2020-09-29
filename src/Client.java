@@ -7,7 +7,11 @@ import java.net.UnknownHostException;
 import java.util.Scanner;
 
 public class Client {
- 
+/*
+ * TODO compile command
+ * jar cfe NewClient.jar Client Client.class
+ * 
+ */
     public static void main(String[] args) {
 //        if (args.length < 2) return;
 //        if (args.length < 1) return;
@@ -38,11 +42,16 @@ public class Client {
  
             String[] cards = cardz.split(", ");
             
+            System.out.println("Game start! Press Enter to draw cards.");
+            scan.nextLine();
+            
             for(int i=0; i<cards.length; i++) {
-            	System.out.println(cards[i]);
+            	System.out.println("You drew: " + cards[i] + "\n");
             	scan.nextLine();
             }
- 
+
+            System.out.println("The game has ended! You cannot draw any more cards.");
+            
  
         } catch (UnknownHostException ex) {
  
@@ -52,6 +61,9 @@ public class Client {
  
             System.out.println("\nThere is no game going on! [I/O error: " + ex.getMessage() + "]");
         }
+        
+        System.out.println("\nPress Enter to exit.");
+        scan.nextLine();
         
         scan.close();
         
