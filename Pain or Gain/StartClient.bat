@@ -1,4 +1,4 @@
 @echo off
 title Pain or Gain: Client Application
-color 06
+color 71
 java -jar Client.jar
