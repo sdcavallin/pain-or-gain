@@ -45,10 +45,18 @@ public class Client {
         } catch (UnknownHostException ex) {
  
         	System.out.println("\nThere is no game going on! [Server not found: " + ex.getMessage() + "]");
+        	System.out.println("\nPress Enter to exit.");
+            scan.nextLine();
+            scan.close();
+        	return;
  
         } catch (IOException ex) {
  
             System.out.println("\nThere is no game going on! [I/O error: " + ex.getMessage() + "]");
+            System.out.println("\nPress Enter to exit.");
+            scan.nextLine();
+            scan.close();
+        	return;
         }
         
         String[] cards = cardz.split(", ");
