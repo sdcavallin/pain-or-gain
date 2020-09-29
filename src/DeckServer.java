@@ -60,9 +60,9 @@ public class DeckServer {
         	i%=players;
         }
         
-        for(int j=0; j<players; j++) {
+        /*for(int j=0; j<players; j++) {
         	System.out.println(draw.get(j));
-        }
+        }*/
         
         try (ServerSocket serverSocket = new ServerSocket(port)) {
  
@@ -88,9 +88,9 @@ public class DeckServer {
             System.out.println("Server exception: " + ex.getMessage());
             ex.printStackTrace();
             
-            scan.nextLine();
         }
         
+        scan.nextLine();
         scan.close();
         
     }

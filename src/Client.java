@@ -33,25 +33,14 @@ public class Client {
         
         System.out.println();
         
+        String cardz = "HELLO";
+        
         try (Socket socket = new Socket(hostname, port)) {
  
             InputStream input = socket.getInputStream();
             BufferedReader reader = new BufferedReader(new InputStreamReader(input));
  
-            String cardz = reader.readLine();
- 
-            String[] cards = cardz.split(", ");
-            
-            System.out.println("Game start! Press Enter to draw cards.");
-            scan.nextLine();
-            
-            for(int i=0; i<cards.length; i++) {
-            	System.out.println("You drew: " + cards[i] + "\n");
-            	scan.nextLine();
-            }
-
-            System.out.println("The game has ended! You cannot draw any more cards.");
-            
+            cardz = reader.readLine();
  
         } catch (UnknownHostException ex) {
  
@@ -61,6 +50,20 @@ public class Client {
  
             System.out.println("\nThere is no game going on! [I/O error: " + ex.getMessage() + "]");
         }
+        
+        String[] cards = cardz.split(", ");
+        
+        System.out.println("Game start! Press Enter to draw cards.");
+        scan.nextLine();
+        
+        for(int i=0; i<cards.length; i++) {
+        	System.out.println("You drew: " + cards[i] + "\n");
+        	scan.nextLine();
+        }
+
+        System.out.println("The game has ended! You cannot draw any more cards.");
+        
+        
         
         System.out.println("\nPress Enter to exit.");
         scan.nextLine();
