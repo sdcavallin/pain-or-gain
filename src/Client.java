@@ -16,7 +16,8 @@ public class Client {
 //        if (args.length < 2) return;
 //        if (args.length < 1) return;
     	
-    	String hostname = "2601:58b:8304:3970:f1b0:109d:9f65:da7c"; // hardcoded host
+    	String hostname = "73.139.226.145"; // hardcoded host
+    	
     	
 //        int port = Integer.parseInt(args[1]);
         int port = 6789;
